@@ -1,0 +1,60 @@
+<krpano version="1.19">
+	<style name="hotspotstyle" capture="false" scale="0.6" zoom="false" alpha=".9"/>
+
+	<action name="startup" autorun="onstart">
+		loadscene(0, null, MERGE);
+	</action>
+
+	<scene name="scene1" title="full" onstart="" lat="" lng="" heading="">
+		<view hlookat="10" vlookat="35" fov="80" fovmin="50" fovmax="128"/> 
+		<plugin name="gyro" devices="html5" url="plugins/gyro.js" enabled="true" friction=".9" velastic="0" vrelative="true"/>
+
+		<preview url="images/preview.jpg"/>
+		<image>
+			<left url="images/5th_ave_4.jpg"/>
+			<front url="images/5th_ave_1.jpg"/>
+			<right url="images/5th_ave_2.jpg"/>
+			<back url="images/5th_ave_3.jpg"/>
+			<up url="images/5th_ave_5.jpg"/>
+			<down url="images/5th_ave_6.jpg"/>
+		</image>
+
+		<!-- 瓶子 -->
+		<hotspot name="circle1" style="hotspotstyle" url="images/circle.png" distorted="true" capture="false" visible="true" scale="1" alpha="1" ath="-43" atv="53" onclick="js(getBottle(););lookto(-90,35,80,smooth(500,300,200));" onloaded="playHandAm();"/>
+		
+		<hotspot name="circle2" style="hotspotstyle" url="images/circle.png" distorted="true" capture="false" visible="false" scale="1" alpha="1" ath="-11" atv="33" onclick="js(getHole(););" onloaded="playHandAm2();"/>
+		
+		<!--xml中onclick执行 switch(plugin[gyro].enabled);-->
+		
+		<!-- 停止重力感应 -->
+		<action name="stopGyro">
+			set(plugin[gyro].enabled, true);
+		</action>
+		
+		<!-- 瓶子动画 -->
+		<action name="handAm1"> 
+			set(hotspot[circle1].alpha, 1);
+			set(hotspot[circle1].scale, 0);
+			tween(hotspot[circle1].alpha, 0, 1.5);
+			tween(hotspot[circle1].scale, .7, 1.5, default, handAm1());
+		</action>
+		
+		<!-- 洞口动画 -->
+		<action name="handAm2"> 
+			set(hotspot[circle2].alpha, 1);
+			set(hotspot[circle2].scale, 0);
+			tween(hotspot[circle2].alpha, 0, 1.5);
+			tween(hotspot[circle2].scale, .7, 1.5, default, handAm2());
+		</action>
+		
+		<action name="playHandAm">
+			handAm1();
+		</action>
+		
+		<action name="playHandAm2">
+			handAm2();
+		</action>
+	</scene>
+
+
+</krpano>

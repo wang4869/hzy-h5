@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>海扫酷热</title>
+<link rel="stylesheet" href="css/common.css">
+
+<!--移动端版本兼容 -->
+<script type="text/javascript">
+         var phoneWidth =  parseInt(window.screen.width);
+         var phoneScale = phoneWidth/640;
+         var ua = navigator.userAgent;
+         if (/Android (\d+\.\d+)/.test(ua)){
+                   var version = parseFloat(RegExp.$1);
+                   if(version>2.3){
+                            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+                   }else{
+                            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                   }
+         } else {
+                   document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+         }
+</script>
+<!--移动端版本兼容 end -->
+
+</head>
+
+<body>
+
+<div class="pageOuter">
+	<div class="page0 page">
+    	<div class="h832">
+        	<div class="innerDiv">
+				<div class="page0Bg bgImg"></div>
+            	<div class="page0Img1 bgImg"></div>
+                <div class="page0Img2 bgImg"></div>
+                <img src="images/loadingImg.png" class="abs loadingImg">
+                <div class="loadTxt abs">LOADING <span>0</span>%</div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="pageGame1 page" style="display:none;">
+    	<div class="h832">
+            <div class="innerDiv">
+                <div class="pageGame11 bgImg"></div>
+                <div class="game1Img1 bgImg" style="display:none;"></div>
+                <img src="images/game1Img2.png" class="abs game1Img2" style="display:none;">
+                <div class="game1Img3 bgImg" style="display:none;"></div>
+                <img src="images/game1Img4.png" class="abs game1Img4" style="display:none;">
+                <img src="images/game1Img5.png" class="abs game1Img5" style="display:none;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="pageGame2 page" style="display:none;">
+    	<div class="h832">
+            <div class="innerDiv">
+            	<div class="game2A0">
+                    <div class="game2Img1 bgImg"></div>
+                    <img src="images/game2Img2.png" class="abs game2Img2">
+                    <a href="javascript:void(0);" class="abs game2Btn1" onClick="game2Act1();"><img src="images/space.gif" width="162" height="105"></a>
+                </div>
+                <div class="game2A1" style="display:none;">
+                    <div class="game2Img3 bgImg"></div>
+                    <img src="images/game2Img4.png" class="abs game2Img4">
+                    <div class="game2Img5 bgImg"></div>
+                    <div class="game2Img6 bgImg"></div>
+                    <div class="game2Img7 bgImg" style="display:none;"></div>
+                    <img src="images/game2Img8.png" class="abs game2Img8" style="display:none;">
+                </div>
+                <div class="game2A2" style="display:none;">
+                    <div class="game3Img1 bgImg"></div>
+                    <div class="game3Img2 bgImg"></div>
+                    <div class="game3Img3 bgImg" style="display:none;"></div>
+                    <img src="images/game1Img4.png" class="abs game3Img3a" style="display:none;">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pageGame3 page" style="display:none;">
+    	<div class="h832">
+            <div class="innerDiv">
+            	<div class="game3Img4 bgImg"></div>
+                <div class="abs pb p1b" rel="p1">
+                	<img src="images/p4.png" class="pg">
+                </div>
+                <div class="abs pb p2b" rel="p2">
+                	<img src="images/p6.png" class="pg">
+                </div>
+                <div class="abs pb p3b" rel="p3">
+                	<img src="images/p2.png" class="pg">
+                </div>
+                <div class="abs pb p4b" rel="p4">
+                	<img src="images/p5.png" class="pg">
+                </div>
+                <div class="abs pb p5b" rel="p5">
+                	<img src="images/p1.png" class="pg">
+                </div>
+                <div class="abs pb p6b" rel="p6">
+                	<img src="images/p3.png" class="pg">
+                </div>
+                <img src="images/game3Img5.png" class="abs game3Img5">
+            </div>
+        </div>
+    </div>
+    
+    <div class="pageGame4 page" style="display:none;">
+    	<div class="h832">
+            <div class="innerDiv">
+            	<div class="game3A1">
+                	<div class="game4Img1 bgImg"></div>
+                	<img src="images/game4Img2.png" class="abs game4Img2">
+                </div>
+                <div class="game3A2" style="display:none;">
+                	<div class="game4Img3 bgImg"></div>
+                	<div class="game4Img4 bgImg"></div>
+                </div>
+                <div class="game3A3" style="display:none;">
+                	<div class="game5Img1 bgImg"></div>
+					<div class="game5Img3 bgImg"></div>
+                    <img src="images/game1Img4.png" class="abs game5Img2b">
+					<div class="game5Img2 bgImg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pageGame5 page" style="display:none;">
+    	<div class="h832">
+            <div class="innerDiv">
+            	<div class="game6Img1 bgImg"></div>
+                <img src="images/game6Img1b.png" class="abs game6Img1b">
+                <div class="game6Img2 bgImg" style="display:none;"></div>
+                <img src="images/game6Img3.png" class="abs game6Img3" style="display:none;">
+                <img src="images/game6Img6.png" class="abs game6Img6" style="display:none;">
+                <img src="images/game6Img4.png" class="abs game6Img4" style="display:none;">
+                <img src="images/game6Img5.png" class="abs game6Img5" style="display:none;">
+                <div class="abs game6Img5b" style="display:none;" id="game6Img5b"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<img src="images/logo.png" class="abs logo">
+<a href="javascript:void(0);" class="abs musicBtn"><img src="images/musicBtn.png"></a>
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/jquery.imgpreload.js"></script>
+<script src="js/touch.js"></script>
+<script src="js/shake.js"></script>
+<script src="js/common.js"></script>
+
+<script>
+$(document).ready(function(){
+	loadingGame();
+	//testDarg();
+	});
+</script>
+
+</body>
+</html>
