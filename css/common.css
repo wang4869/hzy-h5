@@ -19,7 +19,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 .page{ position:absolute; left:0; top:0;}
 .pageOuter{ width:640px; overflow:hidden; margin:0 auto; position:relative;}
 .h832{ width:640px; height:832px;}
-.bgImg{ position:absolute; left:0; top:-105px; width:640px; height:1039px; display:block;}
+.bgImg{ position:absolute; left:0; top:-104px; width:640px; height:1039px; display:block;}
 
 .logo{ left:35px; top:35px;}
 .musicBtn{ right:35px; top:35px;}
@@ -98,6 +98,22 @@ select,input,textarea{font-family:inherit; outline:none;}
 }
 .page1Img8{ left:449px; top:511px;}
 
+/*page2*/
+.page2Img1{ background:url(../images/page2Img1.jpg) 0 0 no-repeat; left:-320px; margin:0; top:-624px; width:1280px; height:2078px;}
+.page2Img1Act{
+-webkit-animation:page2Img1Act 1s 0.5s ease both; -webkit-transform-origin:478px 1195px;}
+@-webkit-keyframes page2Img1Act{
+0%{-webkit-transform:scale(0.5);}
+100%{-webkit-transform:scale(1);}
+}
+.page2Img2{ left:95px; top:550px;
+-webkit-animation:page2Img2 1s 0.5s linear both infinite;}
+@-webkit-keyframes page2Img2{
+0%{-webkit-transform:translate(0,0);}
+30%{-webkit-transform:translate(0,-20px);}
+60%{-webkit-transform:translate(0,0);}
+100%{-webkit-transform:translate(0,0);}
+}
 
 /*360 note bg #151f45*/
 

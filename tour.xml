@@ -3,6 +3,7 @@
 
 	<action name="startup" autorun="onstart">
 		loadscene(0, null, MERGE);
+		set(global_heading, 180);
 	</action>
 
 	<scene name="scene1" title="full" onstart="" lat="" lng="" heading="">
@@ -54,6 +55,24 @@
 		<action name="playHandAm2">
 			handAm2();
 		</action>
+		
+		
+		<!-- 表盘不动 表针动 -->
+		<layer name="compass1" url="images/compass_plate.png" keep="true" align="lefttop" x="20" y="20" children="false" scalechildren="true" destscale="1.0" onclick="switch(destscale,1.0,0.5);tween(scale,get(destscale));">
+			<layer name="compass1_plate"   url="images/compass_plate.png"   align="center"  zorder="1" />
+			<layer name="compass1_pointer" url="images/compass_pointer.png" align="center"  zorder="2" />
+			<layer name="compass1_ring"    url="images/compass_ring.png"    align="lefttop" zorder="3" />
+		</layer>
+		
+		<!-- 视野改变事件 -->
+		<events name="compass_events" keep="true" onviewchange="compass_update_rotate();" />
+		
+		<!-- 更新指南针旋转数值 -->
+		
+		<action name="compass_update_rotate">
+			calc(plugin[compass1_pointer].rotate, view.hlookat - global_heading);
+		</action>
+		
 	</scene>
 
 

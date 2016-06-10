@@ -200,7 +200,7 @@ function goGame1(){
 	
 function getShake(){
 	 var myShakeEvent = new Shake({
-        threshold: 15
+        threshold: 5
     	});
     myShakeEvent.start();
     window.addEventListener('shake', shakeEventDidOccur, false);
@@ -214,11 +214,12 @@ function shakeEventDidOccur(){
 		$('.game1Img3').css('opacity','0.3').show();
 		step++;
 		}
-		else if(step<=3){
+		else if(step<=2){
 			$('.game1Img3').css('opacity',step/3);
 			step++;
 			}
 			else{
+				$('.game1Img3').css('opacity',step/3);
 				$('.game1Img4').show();
 				$('.game1Img5').fadeIn(1000);
 				$('.pageGame1').touchwipe({
@@ -272,51 +273,63 @@ var dragImg;
 var dragPb;
 var dropImg;
 var dropPb;
+var canCheck=true;
 function game3Start(){
 	$(".pg").draggable({
 		drag:function( event, ui ){
-			$('.game3Img5').fadeOut(500);
-			$(".pg").css('z-index','0');
-			$(this).css('z-index','5');
-			dragImg=$(this).attr('src');
-			dragPb=$(this).parents('.pb').attr('rel');
+			if(canCheck){
+				$('.game3Img5').fadeOut(500);
+				$(".pg").css('z-index','0');
+				$(this).css('z-index','5');
+				dragImg=$(this).attr('src');
+				dragPb=$(this).parents('.pb').attr('rel');
+				}
 			},
 		revert: true
 		});
 	$(".pb").droppable({
 		drop: function( event, ui ) {
-			dropPb=$(this).attr('rel');
-			dropImg=$(this).find('img').attr('src');
-			$(this).find('img').attr('src',dragImg);
-			$('.'+dragPb+'b').find('img').attr('src',dropImg);
-			checkDrag();
+			if(canCheck){
+				dropPb=$(this).attr('rel');
+				dropImg=$(this).find('img').attr('src');
+				$(this).find('img').attr('src',dragImg);
+				$('.'+dragPb+'b').find('img').attr('src',dropImg);
+				checkDrag();
+				}
 			}
 		});
 	}
 	
 function checkDrag(){
 	if(($('.p1b img').attr('src').indexOf('1')>-1)&&($('.p2b img').attr('src').indexOf('2')>-1)&&($('.p3b img').attr('src').indexOf('3')>-1)&&($('.p4b img').attr('src').indexOf('4')>-1)&&($('.p5b img').attr('src').indexOf('5')>-1)&&($('.p6b img').attr('src').indexOf('6')>-1)){
-		$('.pageGame3').fadeOut(500);
-		$('.pageGame4').fadeIn(500);
-		$('.game4Img1').click(function(){
-			$('.game3A1').fadeOut(500);
-			$('.game3A2').fadeIn(500);
-			setTimeout(function(){
-				$('.game3A2').fadeOut(500);
-				$('.game3A3').fadeIn(500);
-				$('.game5Img2').touchwipe({
-					min_move_x: 40, //横向灵敏度
-					min_move_y: 40, //纵向灵敏度
-					wipeUp: function() {
-						$('.pageGame4').fadeOut(500);
-						$('.pageGame5').fadeIn(500);
-						game4Start();
-						}, //向上滑动事件
-					preventDefaultEvents: true //阻止默认事件
-					});
-				},2000);
-			});
+		canCheck=false;
+		setTimeout(function(){
+			checkOk();
+			},1500);
 		}
+	}
+	
+function checkOk(){
+	$('.pageGame3').fadeOut(500);
+	$('.pageGame4').fadeIn(500);
+	$('.game4Img1').click(function(){
+		$('.game3A1').fadeOut(500);
+		$('.game3A2').fadeIn(500);
+		setTimeout(function(){
+			$('.game3A2').fadeOut(500);
+			$('.game3A3').fadeIn(500);
+			$('.game5Img2').touchwipe({
+				min_move_x: 40, //横向灵敏度
+				min_move_y: 40, //纵向灵敏度
+				wipeUp: function() {
+					$('.pageGame4').fadeOut(500);
+					$('.pageGame5').fadeIn(500);
+					game4Start();
+					}, //向上滑动事件
+				preventDefaultEvents: true //阻止默认事件
+				});
+			},2000);
+		});
 	}
 	
 function game4Start(){

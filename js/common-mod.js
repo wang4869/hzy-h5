@@ -68,6 +68,11 @@ function loadingPage1(){
 	images.push("images/5th_ave_6.jpg");
 	images.push("images/preview.jpg");
 	
+	images.push("images/page1Img4.png");
+	images.push("images/page1Img5.png");
+	images.push("images/page1Img6.png");
+	images.push("images/page2Img1.jpg");
+	
     /*图片预加载*/
     var imgNum=0;
     $j.imgpreload(images,
@@ -97,6 +102,7 @@ function goPage1(){
 		setTimeout(function(){
 			$j('body').css('background','#FFF');
 			$j('.page1').show();
+			hidePanoLayerEle(['compass1']);
 			$j('#pano').fadeIn(1000);
 			$j('.page1Img0').fadeOut(1500);
 			setTimeout(function(){
@@ -142,18 +148,50 @@ function showPanoEle(e){
 		}
 	}
 	
+function hidePanoLayerEle(e){
+	krpano=document.getElementById("krpanoSWFObject");
+	if (krpano){
+		 for (var i = e, n = i.length, a = 0; n > a; a++){
+			 krpano.set("layer[" + i[a] + "].visible", !1);
+			 }
+		}
+	}
+		
+function showPanoLayerEle(e){
+	krpano=document.getElementById("krpanoSWFObject");
+	if (krpano){
+		for (var i = e, n = i.length, a = 0; n > a; a++){
+			 krpano.set("layer[" + i[a] + "].visible", !0);
+			}
+		}
+	}
+	
 function backPano2(){
 	hidePanoEle(['circle1']);
 	showPanoEle(['circle2']);
 	$j('.page1Img6').fadeOut(500);
 	$j('.page1Img7').hide();
 	$j('.page1Img8').hide();
+	showPanoLayerEle(['compass1']);
 	$j('#pano').fadeIn(500);
+	$j('.logo').fadeOut(500);
+	$j('.musicBtn').fadeOut(500);
 	}
 	
 function getHole(){
 	$j('#pano').fadeOut(500);
-	alert(2);
+	$j('.logo').fadeIn(500);
+	$j('.musicBtn').fadeIn(500);
+	$j('.page1').fadeOut(500);
+	$j('.page2').fadeIn(500);
+	$j('.page2Img1').addClass('page2Img1Act');
+	setTimeout(function(){
+		$j('.page2Img2').show();
+		},1500);
+	}
+	
+function goGame(){
+	window.location.href='game.html';
 	}
 	
 function startMove(){
