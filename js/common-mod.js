@@ -184,10 +184,10 @@ function getHole(){
 	$j('.musicBtn').fadeIn(500);
 	$j('.page1').fadeOut(500);
 	$j('.page2').fadeIn(500);
-	$j('.page2Img1').addClass('page2Img1Act');
+	$j('.page2Img1Img').addClass('page2Img1Act');
 	setTimeout(function(){
 		$j('.page2Img2').show();
-		},1500);
+		},4600);
 	}
 	
 function goGame(){

@@ -21,7 +21,7 @@
 		</image>
 
 		<!-- 瓶子 -->
-		<hotspot name="circle1" style="hotspotstyle" url="images/circle.png" distorted="true" capture="false" visible="true" scale="1" alpha="1" ath="-43" atv="53" onclick="js(getBottle(););lookto(-90,35,80,smooth(500,300,200));" onloaded="playHandAm();"/>
+		<hotspot name="circle1" style="hotspotstyle" url="images/circle.png" distorted="true" capture="false" visible="true" scale="1" alpha="1" ath="-43" atv="53" onclick="js(getBottle(););lookto(-90,35,80,smooth(500,300,200));" onloaded="playHandAm();lookto(10,35,80,smooth(500,300,200));"/>
 		
 		<hotspot name="circle2" style="hotspotstyle" url="images/circle.png" distorted="true" capture="false" visible="false" scale="1" alpha="1" ath="-11" atv="33" onclick="js(getHole(););" onloaded="playHandAm2();"/>
 		
