@@ -186,16 +186,16 @@ function loadingGame(){
 	}
 	
 function goGame1(){
-	$('.page0').fadeOut();
-	$('.pageGame1').fadeIn(500);
+	$('.page0').fadeOut(500);
+	//$('.pageGame1').fadeIn(500);
 	setTimeout(function(){
 		$('.pageGame11').fadeOut(1000);
 		$('.game1Img1').fadeIn(1000);
 		setTimeout(function(){
 			$('.game1Img2').show();
 			getShake();
-			},1000);
-		},2000);
+			},500);
+		},1000);
 	}
 	
 function getShake(){
@@ -206,32 +206,34 @@ function getShake(){
     window.addEventListener('shake', shakeEventDidOccur, false);
 	}
 	
-var step=1;
 function shakeEventDidOccur(){
 	$('.game1Img2').hide();
 	$('.game1Img1').fadeOut(500);
-	if(step==1){
-		$('.game1Img3').css('opacity','0.3').show();
-		step++;
-		}
-		else if(step<=2){
-			$('.game1Img3').css('opacity',step/3);
-			step++;
-			}
-			else{
-				$('.game1Img3').css('opacity',step/3);
-				$('.game1Img4').show();
-				$('.game1Img5').fadeIn(1000);
-				$('.pageGame1').touchwipe({
-					min_move_x: 40, //横向灵敏度
-					min_move_y: 40, //纵向灵敏度
-					wipeUp: function() {
-						$('.pageGame1').fadeOut(500);
-						$('.pageGame2').fadeIn(500);
-						}, //向上滑动事件
-					preventDefaultEvents: true //阻止默认事件
-					});
-				}
+	
+	$('.game1Black').fadeOut(1000);
+	$('.game1Img31').delay(1000).fadeIn(500);
+	$('.game1Img32').delay(1500).fadeIn(500);
+	$('.game1Img33').delay(2000).fadeIn(500);
+	$('.game1Img34').delay(2500).fadeIn(500);
+	$('.game1Img35').delay(3000).fadeIn(500);
+	$('.game1Img36').delay(3500).fadeIn(500);
+	setTimeout(function(){
+		$('.game1Img4').show();
+		$('.game1Img5').fadeIn(1000);
+		$('.pageGame1').touchwipe({
+			min_move_x: 40, //横向灵敏度
+			min_move_y: 40, //纵向灵敏度
+			wipeUp: function() {
+				$('.pageGame1').addClass('zoomOut');
+				
+				setTimeout(function(){
+					$('.pageGame1').hide();
+					$('.pageGame2').fadeIn(500);
+					},600);
+				}, //向上滑动事件
+			preventDefaultEvents: true //阻止默认事件
+			});
+		},4500);
 	}
 	
 function game2Act1(){
@@ -256,9 +258,13 @@ function game2Act1(){
 						min_move_x: 40, //横向灵敏度
 						min_move_y: 40, //纵向灵敏度
 						wipeUp: function() {
-							$('.pageGame2').fadeOut(500);
-							$('.pageGame3').fadeIn(500);
-							game3Start();
+							$('.pageGame2').addClass('zoomOut');
+				
+							setTimeout(function(){
+								$('.pageGame2').hide();
+								$('.pageGame3').fadeIn(500);
+								game3Start();
+								},600);
 							}, //向上滑动事件
 						preventDefaultEvents: true //阻止默认事件
 						});
@@ -301,11 +307,12 @@ function game3Start(){
 	}
 	
 function checkDrag(){
-	if(($('.p1b img').attr('src').indexOf('1')>-1)&&($('.p2b img').attr('src').indexOf('2')>-1)&&($('.p3b img').attr('src').indexOf('3')>-1)&&($('.p4b img').attr('src').indexOf('4')>-1)&&($('.p5b img').attr('src').indexOf('5')>-1)&&($('.p6b img').attr('src').indexOf('6')>-1)){
+	if(($('.p1b img').attr('src').indexOf('1')>-1)&&($('.p2b img').attr('src').indexOf('2')>-1)&&($('.p3b img').attr('src').indexOf('3')>-1)&&($('.p4b img').attr('src').indexOf('4')>-1)&&($('.p5b img').attr('src').indexOf('5')>-1)&&($('.p6b img').attr('src').indexOf('6')>-1)&&($('.p7b img').attr('src').indexOf('7')>-1)&&($('.p8b img').attr('src').indexOf('8')>-1)){
 		canCheck=false;
+		$('.game3Img6').delay(1000).fadeIn(1000);
 		setTimeout(function(){
 			checkOk();
-			},1500);
+			},3000);
 		}
 	}
 	
@@ -322,9 +329,13 @@ function checkOk(){
 				min_move_x: 40, //横向灵敏度
 				min_move_y: 40, //纵向灵敏度
 				wipeUp: function() {
-					$('.pageGame4').fadeOut(500);
-					$('.pageGame5').fadeIn(500);
-					game4Start();
+					$('.pageGame4').addClass('zoomOut');
+				
+					setTimeout(function(){
+						$('.pageGame4').hide();
+						$('.pageGame5').fadeIn(500);
+						game4Start();
+						},600);
 					}, //向上滑动事件
 				preventDefaultEvents: true //阻止默认事件
 				});
@@ -392,9 +403,25 @@ function waterGo(){
 		//alert((g6i5Left-30)+' - '+parseInt(wL[wS])+' - '+(g6i5Left+85)+' - '+(parseInt(wL[wS])+50));
 		if(((g6i5Left+26)<=parseInt(wL[wS]))&&((g6i5Left+122)>=(parseInt(wL[wS])+50))){
 			getW++;
-			if(getW==3){
+			$('.we').css('background-position',getW*(-56)+'px');
+			if(getW==5){
 				clearInterval(wInterval);
-				alert('游戏结束');
+				$('.game4A1').delay(1000).fadeOut(500);
+				$('.game4A2').delay(1000).fadeIn(500);
+				$('.game7Img4').delay(1500).show();
+				$('.game7Img2').touchwipe({
+					min_move_x: 40, //横向灵敏度
+					min_move_y: 40, //纵向灵敏度
+					wipeUp: function() {
+						$('.pageGame5').addClass('zoomOut');
+					
+						setTimeout(function(){
+							$('.pageGame5').hide();
+							$('.pageGame6').fadeIn(500);
+							},600);
+						}, //向上滑动事件
+					preventDefaultEvents: true //阻止默认事件
+					});
 				}
 			}
 		},600);
@@ -414,6 +441,7 @@ function down(event){
 				}
 	$('.game6Img3').hide();
 	$('.game6Img6').hide();
+	$('.we').show();
 	}
 function up(){
 	onoff = false;

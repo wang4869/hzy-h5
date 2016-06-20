@@ -123,7 +123,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 /*game1*/
 .pageGame11{ background:#000;}
 .game1Img1{ background:url(../images/game1Img1.png) 0 0 no-repeat;}
-.game1Img2{ left:390px; top:590px;
+.game1Img2{ left:282px; top:160px;
 -webkit-animation:game1Img2 0.8s 0s linear both infinite;
 -webkit-transform-origin:center bottom;}
 @-webkit-keyframes game1Img2{
@@ -131,6 +131,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 50%{ -webkit-transform:rotate(15deg);}
 100%{ -webkit-transform:rotate(-10deg);}
 }
+.game1Black{ background:#000000; opacity:0.9;}
 .game1Img3{ background:url(../images/game1Img3.png) 0 0 no-repeat;}
 .game1Img4{ left:300px; top:700px;
 -webkit-animation:game1Img4 0.8s 0s linear both infinite;}
@@ -139,15 +140,28 @@ select,input,textarea{font-family:inherit; outline:none;}
 50%{ -webkit-transform:translate(0,-20px);}
 100%{ -webkit-transform:translate(0,0);}
 }
-.game1Img5{ left:270px; top:815px;}
+.game1Img5{ background:url(../images/game1Img5.png) 0 0 no-repeat;}
+.game1Img31{ background:url(../images/game1Img31.png) 0 0 no-repeat;}
+.game1Img32{ background:url(../images/game1Img32.png) 0 0 no-repeat;}
+.game1Img33{ background:url(../images/game1Img33.png) 0 0 no-repeat;}
+.game1Img34{ background:url(../images/game1Img34.png) 0 0 no-repeat;}
+.game1Img35{ background:url(../images/game1Img35.png) 0 0 no-repeat;}
+.game1Img36{ background:url(../images/game1Img36.png) 0 0 no-repeat;}
+
+.zoomOut{-webkit-animation:zoomOut 0.5s 0s ease both; -webkit-transform-origin:50% 50%;}
+@-webkit-keyframes zoomOut{
+0%{ -webkit-transform:scale(1);}
+100%{ -webkit-transform:scale(5);}
+}
+
 .game2Img1{ background:url(../images/game2Img1.png) 0 0 no-repeat;}
-.game2Img2{ left:350px; top:570px; -webkit-animation:game2Img2 0.8s 0s linear both infinite;}
+.game2Img2{ left:90px; top:750px; /*left:350px; top:570px; -webkit-animation:game2Img2 0.8s 0s linear both infinite;*/}
 @-webkit-keyframes game2Img2{
 0%{ -webkit-transform:translate(0,0);}
 50%{ -webkit-transform:translate(-15px,15px);}
 100%{ -webkit-transform:translate(0,0);}
 }
-.game2Btn1{ left:213px; top:638px;}
+.game2Btn1{ left:437px; top:442px;}
 .game2Img3{ background:url(../images/game2Img3.png) 0 0 no-repeat;}
 .game2Img4{ left:256px; top:113px;
 -webkit-animation:game2Img4 0.8s 0s linear both infinite;}
@@ -176,13 +190,17 @@ select,input,textarea{font-family:inherit; outline:none;}
 100%{ -webkit-transform:translate(0,0);}
 }
 .game3Img4{ background:url(../images/game3Img4.png) 0 0 no-repeat;}
-.p1b{ left:114px; top:123px;}
-.p2b{ left:318px; top:123px;}
-.p3b{ left:114px; top:331px;}
-.p4b{ left:318px; top:331px;}
-.p5b{ left:114px; top:539px;}
-.p6b{ left:318px; top:539px;}
+.p1b{ left:116px; top:94px;}
+.p2b{ left:319px; top:94px;}
+.p3b{ left:116px; top:262px;}
+.p4b{ left:319px; top:262px;}
+.p5b{ left:116px; top:430px;}
+.p6b{ left:319px; top:430px;}
+.p7b{ left:116px; top:598px;}
+.p8b{ left:319px; top:598px;}
 .game3Img5{ left:165px; top:775px;}
+.game3Img6{ background:url(../images/game3Img6.png) 0 0 no-repeat; z-index:10;}
+
 .game4Img1{ background:url(../images/game4Img1.png) 0 0 no-repeat;}
 .game4Img2{ left:212px; top:620px;}
 .game4Img3{ background:url(../images/game4Img3.png) 0 0 no-repeat;}
@@ -223,5 +241,14 @@ select,input,textarea{font-family:inherit; outline:none;}
 50%{ -webkit-transform:translate(-20px,0);}
 100%{ -webkit-transform:translate(0,0);}
 }
+.we{ width:56px; height:462px; background:url(../images/weBg.png) 0 0 no-repeat; left:585px; top:290px;}
 
-
+.game7Img1{ background:url(../images/game7Img1.png) 0 0 no-repeat;}
+.game7Img2{ background:url(../images/game7Img2.png) 0 0 no-repeat;}
+.game7Img2b{ left:298px; top:670px; -webkit-animation:game7Img2b 0.8s 0s linear both infinite;}
+@-webkit-keyframes game7Img2b{
+0%{ -webkit-transform:translate(0,0);}
+50%{ -webkit-transform:translate(0,-20px);}
+100%{ -webkit-transform:translate(0,0);}
+}
+.game7Img3{ background:url(../images/game7Img3.png) 0 0 no-repeat;}
