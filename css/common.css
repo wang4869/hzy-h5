@@ -252,3 +252,46 @@ select,input,textarea{font-family:inherit; outline:none;}
 100%{ -webkit-transform:translate(0,0);}
 }
 .game7Img3{ background:url(../images/game7Img3.png) 0 0 no-repeat;}
+.game7Img4{ left:278px; top:705px; -webkit-animation:game7Img4 0.8s 0s linear both infinite;}
+@-webkit-keyframes game7Img4{
+0%{ -webkit-transform:translate(0,0);}
+50%{ -webkit-transform:translate(0,-20px);}
+100%{ -webkit-transform:translate(0,0);}
+}
+
+.game8Img1{ background:url(../images/game8Img1.png) 0 0 no-repeat;}
+.game8Img2{ background:url(../images/game8Img2.png) 0 0 no-repeat;}
+.game8Img2Act{-webkit-animation:game8Img2Act 1s 1s linear both;}
+@-webkit-keyframes game8Img2Act{
+0%{ -webkit-transform:translate(0,20px); opacity:0;}
+100%{ -webkit-transform:translate(0,0); opacity:1;}
+}
+.game8Img3{ background:url(../images/game8Img3.png) 0 0 no-repeat;}
+.game8Img31{ left:77px; top:322px;}
+.game8Img32{ left:224px; top:170px;}
+.game8Img33{ left:392px; top:302px;}
+.game8Box{ width:280px; height:160px; left:181px; top:557px;}
+
+.game8Img4{ background:url(../images/game8Img4.png) 0 0 no-repeat;}
+.game8Img5{ background:url(../images/game8Img5.png) 0 0 no-repeat;}
+.game8Img5Act{-webkit-animation:game8Img5Act 3s 0s linear both infinite;}
+@-webkit-keyframes game8Img5Act{
+0%{ opacity:1;}
+50%{ opacity:0.4;}
+100%{ opacity:1;}
+}
+.game8Img6{ background:url(../images/game8Img6.png) 0 0 no-repeat;}
+.endBottle{ left:268px; top:290px;}
+
+.awardYes1{ background:url(../images/awardYes1.png) 0 0 no-repeat;}
+.awardYes2{ background:url(../images/awardYes2.png) 0 0 no-repeat;}
+.awardYes3{ background:url(../images/awardYes3.png) 0 0 no-repeat;}
+.awardNo{ background:url(../images/awardNo.png) 0 0 no-repeat;}
+.a2Numb,.a3Numb{ left:0; top:275px; width:640px; text-align:center; line-height:100%; font-size:26px; color:#3f0a1b;}
+.endBtn1{ left:195px; top:435px;}
+.endBtn2{ left:195px; top:470px;}
+
+.colddownTime{ background:url(../images/colddownTimeIcon.png) 0 0 no-repeat; width:80px; height:36px; line-height:36px; font-size:30px; color:#FFF; padding-left:40px; left:290px; top:50px;}
+
+.gameOver{ background:url(../images/gameOver.png) 0 0 no-repeat;}
+.endBtn3{ left:195px; top:608px;}
