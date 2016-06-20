@@ -187,7 +187,7 @@ function getHole(){
 	$j('.page2Img1Img').addClass('page2Img1Act');
 	setTimeout(function(){
 		$j('.page2Img2').show();
-		},4600);
+		},4500);
 	}
 	
 function goGame(){
