@@ -521,10 +521,41 @@ function goGame6A2(){
 		});
 	}
 	
+var koNumb;
 function checkDrag2(){
 	if(dragBoxStep==3){
 		canCheck2=false;
 		clearInterval(cdTime);
+		var useTime=parseInt(180-cdn);
+		if(useTime<=60){
+			//文案 击败95-99%
+			koNumb=randomNumb(95,99);
+			}
+		else if(useTime<=80){
+			//文案 击败90-94%
+			koNumb=randomNumb(90,94);
+			}
+		else if(useTime<=100){
+			//文案 击败85-89%
+			koNumb=randomNumb(85,89);
+			}
+		else if(useTime<=120){
+			//文案 击败80-84%
+			koNumb=randomNumb(80,84);
+			}
+		else if(useTime<=140){
+			//文案 击败75-79%
+			koNumb=randomNumb(75,79);
+			}
+		else if(useTime<=160){
+			//文案 击败70-74%
+			koNumb=randomNumb(70,74);
+			}
+		else if(useTime<=180){
+			//文案 击败65-69%
+			koNumb=randomNumb(65,69);
+			}
+		
 		$('.game6A2').delay(500).fadeOut(500);
 		$('.game6A3').delay(500).fadeIn(500);
 		$('.game8Img5').delay(1000).addClass('game8Img5Act');
@@ -588,11 +619,11 @@ function palyAgain(){
 	window.location.reload();
 	}
 	
-function testDarg(){
+/*function testDarg(){
 	$('.page').hide();
 	$('.pageGame5').hide();
 	$('.pageGame6').fadeIn(500);
 	$('.game8Img2').addClass('game8Img2Act').show(0);
 	
 	goGame6A2();
-	}
+	}*/
