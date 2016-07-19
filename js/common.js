@@ -149,7 +149,15 @@ function orientationHandler(event){
 function loadingGame(){
 	var images=[];
 	images.push("images/game1Img1.png");
+	images.push("images/game1Img2.png");
 	images.push("images/game1Img3.png");
+	images.push("images/game1Img5.png");
+	images.push("images/game1Img31.png");
+	images.push("images/game1Img32.png");
+	images.push("images/game1Img33.png");
+	images.push("images/game1Img34.png");
+	images.push("images/game1Img35.png");
+	images.push("images/game1Img36.png");
 	images.push("images/game2Img1.png");
 	images.push("images/game2Img3.png");
 	images.push("images/game2Img5.png");
@@ -159,6 +167,7 @@ function loadingGame(){
 	images.push("images/game3Img2.png");
 	images.push("images/game3Img3.png");
 	images.push("images/game3Img4.png");
+	images.push("images/game3Img6.png");
 	images.push("images/game4Img1.png");
 	images.push("images/game4Img3.png");
 	images.push("images/game4Img4.png");
@@ -167,6 +176,16 @@ function loadingGame(){
 	images.push("images/game5Img3.png");
 	images.push("images/game6Img1.png");
 	images.push("images/game6Img2.png");
+	images.push("images/game7Img1.png");
+	images.push("images/game7Img2.png");
+	images.push("images/game7Img3.png");
+	images.push("images/game8Img1.png");
+	images.push("images/game8Img2.png");
+	images.push("images/game8Img3.png");
+	images.push("images/game8Img4.png");
+	images.push("images/game8Img5.png");
+	images.push("images/game8Img6.png");
+	images.push("images/gameOver.png");
 	
     /*图片预加载*/
     var imgNum=0;
@@ -418,6 +437,7 @@ function waterGo(){
 						setTimeout(function(){
 							$('.pageGame5').hide();
 							$('.pageGame6').fadeIn(500);
+							$('.game8Img2').addClass('game8Img2Act').show(0);
 							},600);
 						}, //向上滑动事件
 					preventDefaultEvents: true //阻止默认事件
@@ -471,8 +491,97 @@ function draw(event){
 		};
 	};
 	
-/*function testDarg(){
+var canCheck2=true;
+var dragBoxImg;
+var dragBoxStep=0;
+function goGame6A2(){
+	$('.game6A1').delay(3000).fadeOut(500);
+	$('.game6A2').delay(3000).fadeIn(500);
+	$(".game8Init").draggable({
+		drag:function( event, ui ){
+			if(canCheck2){
+				$(".game8Init").css('z-index','0');
+				$(this).css('z-index','5');
+				dragBoxImg=$(this).attr('rel');
+				}
+			},
+		revert: true
+		});
+	$(".game8Box").droppable({
+		drop: function( event, ui ) {
+			if(canCheck2){
+				$('.'+dragBoxImg).hide();
+				dragBoxStep++;
+				checkDrag2();
+				}
+			}
+		});
+	}
+	
+function checkDrag2(){
+	if(dragBoxStep==3){
+		canCheck2=false;
+		$('.game6A2').delay(500).fadeOut(500);
+		$('.game6A3').delay(500).fadeIn(500);
+		$('.game8Img5').delay(1000).addClass('game8Img5Act');
+		}
+	}
+	
+var canGetRes=true;
+function goRes(){
+	if(canGetRes){
+		canGetRes=false;
+		//ajax抽奖
+		var awardNumb=2;//1-3 1-3等奖
+		$('.getAward'+awardNumb).show();
+		$('.pageGame6').fadeOut(500);
+		$('.pageGame7').fadeIn(500);
+		
+		//未中奖
+		//$('.getAward0').show();
+		//$('.pageGame6').fadeOut(500);
+		//$('.pageGame7').fadeIn(500);
+		
+		//失败
+		canGetRes=true;
+		}
+	}
+	
+function showShareNote(){
+	
+	}
+	
+var cdt=180;//3分钟
+var cdn=180;//开始180秒
+var cdTime;
+function colddown(){
+	cdn=cdn-1;
+	if(cdn<0){
+		clearInterval(cdTime);
+		$('.pageGame8').show();
+		}
+	var mm=parseInt(cdn/60);
+	if(mm<10){
+		mm='0'+mm.toString();
+		}
+	var ss=cdn%60;
+	if(ss<10){
+		ss='0'+ss.toString();
+		}
+	$('.colddownTime').html(mm+':'+ss);
+	}
+function startColddown(){
+	colddown();
+	cdTime=setInterval(function(){
+		colddown();
+		},1000);
+	}
+	
+function testDarg(){
 	$('.page').hide();
-	$('.pageGame5').show();
-	game4Start();
-	}*/
+	$('.pageGame5').hide();
+	$('.pageGame6').fadeIn(500);
+	$('.game8Img2').addClass('game8Img2Act').show(0);
+	
+	goGame6A2();
+	}
