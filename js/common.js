@@ -212,6 +212,8 @@ function goGame1(){
 		$('.game1Img1').fadeIn(1000);
 		setTimeout(function(){
 			$('.game1Img2').show();
+			$('.colddownTime').fadeIn(500);
+			startColddown();
 			getShake();
 			},500);
 		},1000);
@@ -438,6 +440,10 @@ function waterGo(){
 							$('.pageGame5').hide();
 							$('.pageGame6').fadeIn(500);
 							$('.game8Img2').addClass('game8Img2Act').show(0);
+<<<<<<< HEAD
+=======
+							goGame6A2();
+>>>>>>> origin/master
 							},600);
 						}, //向上滑动事件
 					preventDefaultEvents: true //阻止默认事件
@@ -518,9 +524,47 @@ function goGame6A2(){
 		});
 	}
 	
+<<<<<<< HEAD
 function checkDrag2(){
 	if(dragBoxStep==3){
 		canCheck2=false;
+=======
+var koNumb;
+function checkDrag2(){
+	if(dragBoxStep==3){
+		canCheck2=false;
+		clearInterval(cdTime);
+		var useTime=parseInt(180-cdn);
+		if(useTime<=60){
+			//文案 击败95-99%
+			koNumb=randomNumb(95,99);
+			}
+		else if(useTime<=80){
+			//文案 击败90-94%
+			koNumb=randomNumb(90,94);
+			}
+		else if(useTime<=100){
+			//文案 击败85-89%
+			koNumb=randomNumb(85,89);
+			}
+		else if(useTime<=120){
+			//文案 击败80-84%
+			koNumb=randomNumb(80,84);
+			}
+		else if(useTime<=140){
+			//文案 击败75-79%
+			koNumb=randomNumb(75,79);
+			}
+		else if(useTime<=160){
+			//文案 击败70-74%
+			koNumb=randomNumb(70,74);
+			}
+		else if(useTime<=180){
+			//文案 击败65-69%
+			koNumb=randomNumb(65,69);
+			}
+		
+>>>>>>> origin/master
 		$('.game6A2').delay(500).fadeOut(500);
 		$('.game6A3').delay(500).fadeIn(500);
 		$('.game8Img5').delay(1000).addClass('game8Img5Act');
@@ -559,6 +603,7 @@ function colddown(){
 	if(cdn<0){
 		clearInterval(cdTime);
 		$('.pageGame8').show();
+<<<<<<< HEAD
 		}
 	var mm=parseInt(cdn/60);
 	if(mm<10){
@@ -569,6 +614,21 @@ function colddown(){
 		ss='0'+ss.toString();
 		}
 	$('.colddownTime').html(mm+':'+ss);
+=======
+		return false;
+		}
+		else{
+			var mm=parseInt(cdn/60);
+			if(mm<10){
+				mm='0'+mm.toString();
+				}
+			var ss=cdn%60;
+			if(ss<10){
+				ss='0'+ss.toString();
+				}
+			$('.colddownTime').html(mm+':'+ss);
+			}
+>>>>>>> origin/master
 	}
 function startColddown(){
 	colddown();
@@ -577,11 +637,23 @@ function startColddown(){
 		},1000);
 	}
 	
+<<<<<<< HEAD
 function testDarg(){
+=======
+function palyAgain(){
+	window.location.reload();
+	}
+	
+/*function testDarg(){
+>>>>>>> origin/master
 	$('.page').hide();
 	$('.pageGame5').hide();
 	$('.pageGame6').fadeIn(500);
 	$('.game8Img2').addClass('game8Img2Act').show(0);
 	
 	goGame6A2();
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> origin/master
